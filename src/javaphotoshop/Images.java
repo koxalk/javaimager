@@ -3,6 +3,8 @@ package javaphotoshop;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -126,5 +128,16 @@ public class Images {
         graphics.dispose();
         
         return temp;
+    }
+    
+    public BufferedImage resize(BufferedImage img,int targetWidth, int targetHeight) {
+        BufferedImage resizedImage = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB);
+
+        Graphics2D graphics2D = resizedImage.createGraphics();
+        graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        graphics2D.drawImage(img, 0, 0, targetWidth, targetHeight, null);
+        graphics2D.dispose();
+
+        return resizedImage;
     }
 }
