@@ -18,7 +18,7 @@ public class TryImages {
         String type = "png";
         
         //svae the image using the type of image
-        String output = "C://Users/kosta/Documents/NetBeansProjects/JavaPhotoShop/src/output/zrotate180." + type;
+        String output = "C://Users/kosta/Documents/NetBeansProjects/JavaPhotoShop/src/output/rotateWatermaked." + type;
         
         //set pixel of image
         imgt.setX_pixels(800);
@@ -40,7 +40,7 @@ public class TryImages {
 //        img= trf.make_sepia_image(img);
 
         //
-//        img= imgt.watermrk_the_image(img,"images example");
+        //img= imgt.watermrk_the_image(img,"images example");
 
         //make image brighter
   //      img = trf.brighter(img, 2.0f);
