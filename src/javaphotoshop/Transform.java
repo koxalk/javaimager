@@ -188,4 +188,59 @@ public class Transform {
 
         return newImage;
     }
+    
+    
+    public BufferedImage color_red(BufferedImage img){
+        // get width and height
+        int width = img.getWidth();
+        int height = img.getHeight();
+  
+        // convert to red image
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                int p = img.getRGB(x,y);
+  
+                int a = (p>>24)&0xff;
+                int r = (p>>16)&0xff;
+  
+                // set new RGB
+                // keeping the r value same as in original
+                // image and setting g and b as 0.
+                p = (a<<24) | (r<<16) | (0<<8) | 0;
+  
+                img.setRGB(x, y, p);
+            }
+        }
+        
+        return img;
+    }
+    
+    public BufferedImage color_blue(BufferedImage img){
+        // get width and height
+        int width = img.getWidth();
+        int height = img.getHeight();
+  
+        // convert to blue image
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                int p = img.getRGB(x,y);
+  
+                int a = (p>>24)&0xff;
+                int b = p&0xff;
+  
+                // set new RGB
+                // keeping the b value same as in original
+                // image and setting r and g as 0.
+                p = (a<<24) | (0<<16) | (0<<8) | b;
+  
+                img.setRGB(x, y, p);
+            }
+        }
+        
+        return img;
+    }
 }

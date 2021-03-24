@@ -18,7 +18,7 @@ public class TryImages {
         String type = "png";
         
         //svae the image using the type of image
-        String output = "C://Users/kosta/Documents/NetBeansProjects/JavaPhotoShop/src/output/combine." + type;
+        String output = "C://Users/kosta/Documents/NetBeansProjects/JavaPhotoShop/src/output/coloredBlue." + type;
         
         //set pixel of image
         imgt.setX_pixels(800);
@@ -49,7 +49,7 @@ public class TryImages {
   //      img = trf.blur(img);
   
         //combine images
-        img = trf.combine_images(img,img);
+        //img = trf.combine_images(img,img);
           
         //resize image
         //img= imgt.resize(img,1024,768);
@@ -59,6 +59,11 @@ public class TryImages {
         
         //img = imgt.screenshot();
         
+        
+       // img= trf.color_red(img);
+        
+       img = trf.color_blue(img);
+       
         //save the new image
         imgt.writeImage(img, type, output);
     }
